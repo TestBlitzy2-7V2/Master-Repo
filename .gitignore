@@ -1,0 +1,190 @@
+# =============================================================================
+# Node.js Security-Hardened Project .gitignore
+# 
+# This configuration prevents version control exposure of sensitive certificate
+# files, private TLS keys, and security-related assets while maintaining proper
+# security boundaries for the Express.js application with HTTPS support.
+# =============================================================================
+
+# =============================================================================
+# SECURITY-CRITICAL EXCLUSIONS
+# =============================================================================
+
+# TLS/SSL Certificate Files - CRITICAL SECURITY BOUNDARY
+# Exclude the entire certificates directory containing private keys and certificates
+certificates/
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+*.csr
+
+# Environment Configuration Files
+# Exclude actual environment files but keep the template
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Security Configuration Backups
+*.env.backup
+*.env.bak
+config/secrets.js
+config/keys.js
+
+# =============================================================================
+# NODE.JS STANDARD EXCLUSIONS
+# =============================================================================
+
+# Dependency Directories
+node_modules/
+jspm_packages/
+
+# NPM Debug and Error Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime and Cache Directories
+.npm
+.yarn-integrity
+.pnpm-debug.log*
+
+# Coverage and Test Output
+lib-cov
+coverage/
+*.lcov
+.nyc_output
+.coverage
+.tsbuildinfo
+
+# Build Output and Distribution
+dist/
+build/
+out/
+
+# =============================================================================
+# DEVELOPMENT ENVIRONMENT EXCLUSIONS
+# =============================================================================
+
+# Editor and IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# =============================================================================
+# SECURITY AND MONITORING EXCLUSIONS
+# =============================================================================
+
+# Log Files That May Contain Sensitive Data
+logs/
+*.log
+access.log
+error.log
+security.log
+
+# Process and Runtime Files
+pids/
+*.pid
+
+# Optional Cache Directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# =============================================================================
+# BACKUP AND ARCHIVE EXCLUSIONS
+# =============================================================================
+
+# Archive and Backup Files
+*.tar
+*.tar.gz
+*.rar
+*.zip
+*.7z
+*.backup
+*.bak
+
+# Database Files (if any)
+*.sqlite
+*.sqlite3
+*.db
+
+# =============================================================================
+# DEVELOPMENT TOOLS AND ARTIFACTS
+# =============================================================================
+
+# TypeScript Build Output (if applicable)
+*.tsbuildinfo
+
+# Documentation Build Output
+docs/_build/
+
+# MacOS Finder
+.fseventsd
+
+# Windows Volume Shadow Copy Service
+System Volume Information
+
+# =============================================================================
+# PROJECT-SPECIFIC EXCLUSIONS
+# =============================================================================
+
+# Optional: Uncomment if using these tools in future
+# .vscode/settings.json
+# .vscode/tasks.json
+# .vscode/launch.json
+# .vscode/extensions.json
+
+# Optional: Server-specific runtime files
+server.log
+app.log
+
+# Optional: Development certificates backup
+*.pem.backup
+*.crt.backup
+
+# =============================================================================
+# IMPORTANT INCLUSIONS (Files that SHOULD be committed)
+# =============================================================================
+# The following files should remain in version control:
+# - .env.example (environment configuration template)
+# - package.json (project dependencies and configuration)
+# - package-lock.json (dependency lock file)
+# - server.js (main application file)
+# - README.md (project documentation)
+# - This .gitignore file itself
+# =============================================================================
